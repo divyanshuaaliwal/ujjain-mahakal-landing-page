@@ -1,0 +1,227 @@
+/* AbhishekBookingVideoComponent.module.css */
+
+.container {
+  color: #fff;
+   background:transparent;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    color: #d97706;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+     font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main {
+    display: flex;
+    gap: 20px;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.details {
+    width: 65%;
+    background:  rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    /* width: 500px; */
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #d97706;
+}
+
+.parkInfo,
+.pricing {
+    background: #fff7ed;
+    border-left: 4px solid #f59e0b;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.leftContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.calendarAndForm {
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.calendar,
+.formContainer {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    background:  rgba(0, 0, 0, 0.5);;
+}
+
+.formContainer {
+    transform: rotateY(180deg);
+}
+
+.monthNavigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.monthNavigation button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #f59e0b;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.day,
+.empty {
+    padding: 0.75rem 0;
+    background: #fef3c7;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.day:hover {
+    background: #fde68a;
+}
+
+.disabled {
+    background: #e5e7eb;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.selected {
+    background: #f59e0b;
+    color: white;
+}
+
+.formTitle {
+    font-size: 1.5rem;
+    color: #d97706;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.formGroup label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.formGroup input,
+.formGroup select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.backButton,
+.submitButton {
+    flex: 1;
+    margin: 0 0.5rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.backButton {
+    background: #d1d5db;
+    color: #111827;
+}
+
+.submitButton {
+    background: #f59e0b;
+    color: white;
+}
+
+@media (max-width: 1120px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendarAndForm {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .calendar,
+    .formContainer {
+        position: static;
+        transform: none;
+        backface-visibility: visible;
+        display: none;
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .card:not(.flip) .calendar {
+        display: block;
+    }
+
+    .card.flip .formContainer {
+        display: block;
+    }
+
+    .calendarAndForm .card {
+        transform: none !important;
+    }
+}
